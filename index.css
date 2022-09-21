@@ -1,0 +1,153 @@
+:root{
+	box-sizing: border-box;
+	font-size: calc(1vw + 0.6em);
+	
+	/* color declaration */
+	
+	--clr-Dark-cyan: hsl(158, 36%, 37%);
+	--clr-Cream: hsl(30, 38%, 92%);
+
+		/* ### Neutral */
+
+	--clr-Very-dark-blue: hsl(212, 21%, 14%);
+	--clr-Dark-grayish-blue: hsl(228, 12%, 48%);
+	--clr-White: hsl(0, 0%, 100%);
+	
+}
+
+*,
+*::before,
+*::after{
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+body{
+	background-color: var(--clr-Cream);
+	font-family: 'Montserrat', sans-serif; 
+}
+
+main{
+	max-width: 90em;
+	margin: 0 auto
+}
+
+.container{
+	max-width: 40em;
+	margin-inline: auto;
+	padding: 1.5em;
+	border-radius: 3px;
+}
+
+.product{
+	background-color: var(--clr-White);
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+img,
+image,
+picture{
+	max-width: 100%;
+}
+
+.product-content{
+	padding: 2em;
+}
+
+.product-content > div > small{
+	text-transform: uppercase;
+	letter-spacing: .5em;
+}
+
+.product-content > * + *{
+	margin-top: .8em;
+}
+
+.product-content > p{
+	font-size: 14px;
+}
+
+.product-content > p,
+.product-content > .price,
+.product-content > button{
+	margin-top: 1.5em;
+}
+
+.product-content > div.price{
+	display: flex;
+}
+
+.product-content > h1{
+	font-family: 'Fraunces', serif;
+}
+
+.product-content > div.price > span + span{
+	margin-left: 1.3em;
+	align-self: center;
+	text-decoration: line-through;
+	font-size: 14px;
+}
+
+.product-content .price > #price-main{
+	font-family: 'Fraunces', serif;
+	font-size: 1.8rem;
+	color: hsla(158, 36%, 37%);
+}
+
+.btn {
+	font-size: 15px;
+	background: hsla(158, 36%, 37%, 1) ;
+	color: var(--clr-White);
+	width: 100%;
+	padding: 12px;
+	border-radius: 10px;
+	border: 0;
+	
+	/* making this a flex container */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.btn > .btn-items:nth-child(2){
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.btn:hover{
+	background-color: var(--clr-Dark-cyan);
+}
+
+.attribution { 
+	font-size: 11px; 
+	text-align: center; 
+	padding-bottom: 3em;
+}
+.attribution a { 
+	color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 450px){
+	:root{
+		font-size: 16px;
+	}
+
+	.product{
+		margin-top: 5em;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.product-image img{
+	height: 100%;
+    }
+	.btn{
+		background-color: hsla(158, 36%, 37%, .8);
+	}
+}
